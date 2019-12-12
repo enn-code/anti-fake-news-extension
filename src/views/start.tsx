@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const Start = () => {
   const [articleText, setArticleText] = useState({ text: "" });
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const button = document.createElement("button");
   button.addEventListener(
     "click",
@@ -27,7 +29,9 @@ const Start = () => {
         );
       });
 
-      setTimeout(() => {}, 3000);
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 3000);
     },
     false,
   );
@@ -57,7 +61,13 @@ const Start = () => {
         color: "white",
       }}
     >
-      Hello world - Start <div id="rating"></div>
+      Hello world - Start{" "}
+      {articleText && isLoaded && (
+        <div
+          id="rating"
+          style={{ width: "100px", height: "100px", background: "yellow" }}
+        ></div>
+      )}
       <div style={{ overflow: "auto" }}>{articleText && articleText.text}</div>
     </div>
   );
