@@ -1,25 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+  "name": "News Analyser",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "description": "Analyses and rates articles so that you can make a better judgement on whether it is trustworthy and worth your time.",
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo192.png",
+   "128": "logo192.png"
+  }
 }
