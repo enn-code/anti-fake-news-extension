@@ -1,3 +1,6 @@
+![Alt text](screenshots/live_example_backend.png?raw=true "Live example backend")
+![Alt text](screenshots/live_example_frontend.png?raw=true "Live example frontend")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
