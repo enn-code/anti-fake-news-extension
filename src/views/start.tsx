@@ -25,6 +25,18 @@ const Start = () => {
           function(msg: any) {
             console.log("result message coming from content script:", msg);
             setArticleText(msg);
+
+            // Get article
+            fetch("http://localhost:8080/api/article", {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ article: msg }),
+            }).then(res => {
+              console.log(res);
+            });
           },
         );
       });
