@@ -18,7 +18,7 @@ const Start = () => {
         chrome.tabs.sendMessage(
           tabs[0].id,
           {
-            color: "#555555",
+            task: "retrieve html body",
           },
           function(msg: any) {
             console.log("result message coming from content script:", msg);
@@ -26,6 +26,8 @@ const Start = () => {
           },
         );
       });
+
+      setTimeout(() => {}, 3000);
     },
     false,
   );
@@ -47,8 +49,15 @@ const Start = () => {
   });
 
   return (
-    <div style={{ height: "600px", width: "600px" }}>
-      Hello world - Start{" "}
+    <div
+      style={{
+        height: "600px",
+        width: "600px",
+        background: "black",
+        color: "white",
+      }}
+    >
+      Hello world - Start <div id="rating"></div>
       <div style={{ overflow: "auto" }}>{articleText && articleText.text}</div>
     </div>
   );

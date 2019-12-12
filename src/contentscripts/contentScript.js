@@ -1,4 +1,4 @@
-const hello = "hello world";
+const hello = "initialising contentscript";
 console.log(hello);
 
 // On receiving a message
